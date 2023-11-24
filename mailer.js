@@ -1,5 +1,7 @@
 // ! Create a transporter object using the default SMTP transport
 
+const nodemailer = require("nodemailer");
+
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
