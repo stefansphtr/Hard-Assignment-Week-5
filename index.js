@@ -4,17 +4,9 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 require("dotenv").config(); // ! Use dotenv to read .env vars into Node
 const htmlContent = require("./emailContent");
+const transporter = require("./mailer");
 const app = express();
 app.use(express.json());
-
-// ! Create a transporter object using the default SMTP transport
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD, // ! Use environment variable for password
-  },
-});
 
 // ! Create a server object
 app.post("/send-email", (req, res) => {
