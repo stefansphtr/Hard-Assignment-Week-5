@@ -1,10 +1,9 @@
 // TODO 1: Create a server using the express module in the NodeJS application, the port is free, as long as it is accessed using environment variables
 
 const express = require("express");
-const nodemailer = require("nodemailer");
 require("dotenv").config(); // ! Use dotenv to read .env vars into Node
 
-const htmlContent = require("./emailContent");
+const htmlTemplate = require("./emailContent");
 const transporter = require("./mailer");
 
 const app = express();
@@ -18,7 +17,7 @@ app.post("/send-email", async (req, res) => {
       from: '"Stefanus Bernard Melkisedek" <stefanusbernardmelkisedek@gmail.com>', // sender address
       to: "stefanusbernardmelkisedek@gmail.com", // list of receivers
       subject: req.body.subject, // Subject line
-      html: `${htmlContent}<p>${req.body.message}</p>`, // html body
+      html: htmlTemplate.getHtmlEmailMessageTemplate(req.body.message), // html body with message
     };
 
     // Send the email
