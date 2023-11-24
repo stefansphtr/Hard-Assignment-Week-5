@@ -2,6 +2,7 @@
 
 const express = require("express");
 const nodemailer = require("nodemailer");
+require("dotenv").config(); // ! Use dotenv to read .env vars into Node
 const app = express();
 app.use(express.json());
 
