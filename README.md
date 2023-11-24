@@ -57,3 +57,7 @@ This code sets up a server that can receive requests to send emails. It uses the
 - [Nodemailer](https://nodemailer.com/about/)
 - [Express](https://expressjs.com/)
 - [Node.js](https://nodejs.org/en/)
+
+## Quotes
+
+> "Programming isn’t about what you know, it’s about what you can figure out." – Chris Pine
