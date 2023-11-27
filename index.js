@@ -3,7 +3,7 @@
 const express = require("express");
 require("dotenv").config(); // ! Use dotenv to read .env vars into Node
 
-const html_template = require("./emailContent");
+const html_template = require("./email-template");
 const transporter = require("./mailer");
 
 const app = express();
@@ -32,8 +32,8 @@ app.post("/send-email", async (req, res) => {
 
 // ! Use environment variable for port
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
